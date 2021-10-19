@@ -1,4 +1,4 @@
-### Desafio Android
+## Desafio Android
 
 ![Screenshot do app funcionando](image/screenshot.png)
 
