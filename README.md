@@ -1,10 +1,10 @@
 ### Desafio Android
 
-<img src="https://bitbucket.org/dgdevteste/androidtest/raw/b8e8a0bc1ed2995346a26675250c370982c0235a/image/screenshot.png" width="50%" alt="Screenshot do app"/>
+![Screenshot do app funcionando](image/screenshot.png)
 
 Um dos desafios de qualquer desenvolvedor ou time de desenvolvimento é lidar com código legado, e no Digio isso não é 
-diferente. Por conta disso neste desafio vamos propor a refactoração de um código legado, visando a escabilidade do mesmo
-e a performace.
+diferente. Por conta disso, neste desafio vamos propor a refactoração de um código legado, visando a escalabilidade da 
+aplicação e o desempenho.
 
 Com o passar do tempo identificamos alguns problemas que impedem esse aplicativo de escalar e acarretam problemas de 
 experiência do usuário. A partir disso elaboramos a seguinte lista de requisitos que devem ser cumpridos ao melhorar 
