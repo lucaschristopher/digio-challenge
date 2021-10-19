@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private lateinit var txtMainDigioCash: TextView
     private lateinit var recyMainProducts: RecyclerView
     private lateinit var recyMainSpotlight: RecyclerView
-    private lateinit var scrollable: NestedScrollView
+    private lateinit var body: ConstraintLayout
     private lateinit var loadDigioContainer: ConstraintLayout
 
     private val url = "https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/"
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         txtMainDigioCash = findViewById(R.id.txtMainDigioCash)
         recyMainProducts = findViewById(R.id.recyMainProducts)
         recyMainSpotlight = findViewById(R.id.recyMainSpotlight)
-        scrollable = findViewById(R.id.scrollable)
+        body = findViewById(R.id.body)
         loadDigioContainer = findViewById(R.id.loadDigioContainer)
 
         recyMainProducts.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -72,14 +72,14 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         recyMainSpotlight.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyMainSpotlight.adapter = spotlightAdapter
 
-        scrollable.visibility = View.GONE
+        body.visibility = View.GONE
         loadDigioContainer.visibility = View.VISIBLE
 
         service.getProducts()
             .enqueue(object : Callback<DigioProducts> {
                 override fun onResponse(call: Call<DigioProducts>, response: Response<DigioProducts>) {
                     loadDigioContainer.visibility = View.GONE
-                    scrollable.visibility = View.VISIBLE
+                    body.visibility = View.VISIBLE
 
                     productAdapter.products = response.body()!!.products
                     spotlightAdapter.spotlights = response.body()!!.spotlight
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                     val message = getString(R.string.error)
 
                     loadDigioContainer.visibility = View.GONE
-                    scrollable.visibility = View.GONE
+                    body.visibility = View.GONE
 
                     Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
                 }
