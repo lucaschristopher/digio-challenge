@@ -21,6 +21,8 @@ nossa arquitetura:
    - Gostaríamos de ter testes unitários testando nossa lógica de apresentação, negócios e dados independentemente, 
      visto que tanto a escrita quanto execução dos mesmos são rápidas.
    - Por outro lado, testes unitários rodam em um ambiente de execução diferenciado e são menos fiéis ao dia-a-dia de 
-     nossos usuários, então testes instrumentados também são importantes.
+     nossos usuários, então testes instrumentados também são importantes. 
+ 
+ Ao finalizar o processo você deve fazer um fork desse repositório na sua conta do bitbucket e posteriormente nos enviar o link.
 
 Boa sorte! =)
