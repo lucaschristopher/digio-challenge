@@ -1,6 +1,6 @@
-package br.com.digio.androidtest
+package br.com.digio.androidtest.domain.model
 
-data class DigioProducts (
+internal data class DigioProducts(
     val cash: Cash,
     val products: List<Product>,
     val spotlight: List<Spotlight>

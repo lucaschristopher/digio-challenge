@@ -20,11 +20,15 @@ android {
     }
 
     buildTypes {
-        debug {}
+        debug {
+            buildConfigField "String", "BASE_URL", '"https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/"' // HML environment
+        }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "BASE_URL", '"https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/"' // PRD environment
         }
     }
     compileOptions {

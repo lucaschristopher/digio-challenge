@@ -1,6 +1,7 @@
 package br.com.digio.androidtest
 
 import androidx.recyclerview.widget.DiffUtil
+import br.com.digio.androidtest.domain.model.Product
 
 class ProductListDiffCallback constructor(
     private val oldList: List<Product>,

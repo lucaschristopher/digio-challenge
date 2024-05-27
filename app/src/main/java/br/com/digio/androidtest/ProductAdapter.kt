@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import br.com.digio.androidtest.domain.model.Product
 
 class ProductAdapter : RecyclerView.Adapter<ProductItemViewHolder>() {
 
@@ -20,7 +21,8 @@ class ProductAdapter : RecyclerView.Adapter<ProductItemViewHolder>() {
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_main_products, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_main_products, parent, false)
         return ProductItemViewHolder(view)
     }
 

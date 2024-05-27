@@ -1,9 +1,11 @@
 package br.com.digio.androidtest
 
+import br.com.digio.androidtest.data.service.DigioService
+import br.com.digio.androidtest.domain.model.DigioProducts
 import com.google.gson.Gson
 
 class ExampleService(
-    private val service: DigioEndpoint
+    private val service: DigioService
 ) {
 
     fun mockDigioProducts(): DigioProducts =

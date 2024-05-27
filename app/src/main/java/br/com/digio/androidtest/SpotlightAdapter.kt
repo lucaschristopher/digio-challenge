@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import br.com.digio.androidtest.domain.model.Spotlight
 
 class SpotlightAdapter : RecyclerView.Adapter<SpotlightItemViewHolder>() {
 
@@ -20,7 +21,8 @@ class SpotlightAdapter : RecyclerView.Adapter<SpotlightItemViewHolder>() {
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpotlightItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_main_spotlight, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_main_spotlight, parent, false)
         return SpotlightItemViewHolder(view)
     }
 

@@ -4,9 +4,9 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
+import br.com.digio.androidtest.domain.model.Spotlight
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import java.lang.Exception
 
 class SpotlightItemViewHolder constructor(
     itemView: View

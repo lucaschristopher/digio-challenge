@@ -1,17 +1,18 @@
 package br.com.digio.androidtest
 
-import androidx.appcompat.app.AppCompatActivity
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.digio.androidtest.data.service.DigioService
+import br.com.digio.androidtest.domain.model.DigioProducts
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -46,8 +47,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             .build()
     }
 
-    private val service: DigioEndpoint by lazy {
-        retrofit.create(DigioEndpoint::class.java)
+    private val service: DigioService by lazy {
+        retrofit.create(DigioService::class.java)
     }
 
     private val productAdapter: ProductAdapter by lazy {
@@ -66,10 +67,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         body = findViewById(R.id.body)
         loadDigioContainer = findViewById(R.id.loadDigioContainer)
 
-        recyMainProducts.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyMainProducts.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyMainProducts.adapter = productAdapter
 
-        recyMainSpotlight.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyMainSpotlight.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyMainSpotlight.adapter = spotlightAdapter
 
         body.visibility = View.GONE
@@ -77,7 +80,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         service.getProducts()
             .enqueue(object : Callback<DigioProducts> {
-                override fun onResponse(call: Call<DigioProducts>, response: Response<DigioProducts>) {
+                override fun onResponse(
+                    call: Call<DigioProducts>,
+                    response: Response<DigioProducts>
+                ) {
                     loadDigioContainer.visibility = View.GONE
                     body.visibility = View.VISIBLE
 
