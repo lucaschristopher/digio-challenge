@@ -6,4 +6,6 @@
     <string name="logo">Logo</string>
     <string name="digio_cash">digio Cash</string>
     <string name="digio_cash_banner">Digio Cash banner</string>
+    <string name="digio_cache">digio Cache</string>
+    <string name="error_info">Ops! Ocorreu um erro ao buscar produtos.</string>
 </resources>

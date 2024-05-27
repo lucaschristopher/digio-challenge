@@ -7,6 +7,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.platform.app.InstrumentationRegistry
+import br.com.digio.androidtest.presentation.ui.MainActivity
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.Test
 

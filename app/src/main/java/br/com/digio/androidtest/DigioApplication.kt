@@ -1,6 +1,9 @@
 package br.com.digio.androidtest
 
 import android.app.Application
+import br.com.digio.androidtest.data.di.DataModule
+import br.com.digio.androidtest.domain.di.DomainModule
+import br.com.digio.androidtest.presentation.di.PresentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -21,9 +24,8 @@ class DigioApplication : Application() {
     }
 
     private fun loadModules() {
-//        TODO: Load modules
-//        DataModule.load()
-//        DomainModule.load()
-//        PresentationModule.load()
+        DataModule.load()
+        DomainModule.load()
+        PresentationModule.load()
     }
 }
