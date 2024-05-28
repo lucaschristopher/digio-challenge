@@ -8,4 +8,8 @@
     <string name="digio_cash_banner">Digio Cash banner</string>
     <string name="digio_cache">digio Cache</string>
     <string name="error_info">Ops! Ocorreu um erro ao buscar produtos.</string>
+    <string name="image_description_contact_profile_picture">Contact profile picture</string>
+    <string name="image_description_product_item">Product item</string>
+    <string name="image_description_spotlight_item">Spotlight item</string>
+    <string name="image_description_cash_item">Cash item</string>
 </resources>

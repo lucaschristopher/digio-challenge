@@ -17,7 +17,8 @@ internal fun DigioProductsResponse.toDomain() = DigioProducts(
 
 internal fun CashResponse.toDomain() = Cash(
     bannerURL = bannerURL.orEmpty(),
-    title = title.orEmpty()
+    title = title.orEmpty(),
+    description = this.description.orEmpty()
 )
 
 internal fun ProductResponse.toDomain() = Product(

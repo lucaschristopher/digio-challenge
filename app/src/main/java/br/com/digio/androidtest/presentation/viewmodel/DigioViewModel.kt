@@ -21,7 +21,11 @@ internal class DigioViewModel @Inject constructor(
     private val _products = MutableStateFlow<Result<DigioProducts>>(Result.Initial)
     val products = _products.asStateFlow()
 
-    fun getProducts() {
+    init {
+        getProducts()
+    }
+
+    private fun getProducts() {
         viewModelScope.launch {
             useCase.invoke()
                 .onStart {

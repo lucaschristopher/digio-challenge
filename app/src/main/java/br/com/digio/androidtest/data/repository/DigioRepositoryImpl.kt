@@ -6,8 +6,9 @@ import br.com.digio.androidtest.domain.model.DigioProducts
 import br.com.digio.androidtest.domain.repository.DigioRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-internal class DigioRepositoryImpl(
+internal class DigioRepositoryImpl @Inject constructor(
     private val dataSource: DigioRemoteDataSource
 ) : DigioRepository {
     override suspend fun getProducts(): Flow<DigioProducts> = flow {

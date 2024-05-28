@@ -6,8 +6,9 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import javax.inject.Inject
 
-internal class DigioRemoteDataSourceImpl(
+internal class DigioRemoteDataSourceImpl @Inject constructor(
     private val service: DigioService,
     private val dispatcher: CoroutineDispatcher
 ) : DigioRemoteDataSource {

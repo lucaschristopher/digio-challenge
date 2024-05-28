@@ -1,5 +1,6 @@
 package br.com.digio.androidtest.data.di.module
 
+import br.com.digio.androidtest.BuildConfig
 import br.com.digio.androidtest.data.di.qualifier.OkHttpDefault
 import br.com.digio.androidtest.data.di.qualifier.RetrofitDefault
 import br.com.digio.androidtest.data.provider.factory.OkHttpClientFactory
