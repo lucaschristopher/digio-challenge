@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.AndroidTest" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.AndroidTest" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/blue_darker</item>
+        <item name="android:colorPrimaryDark">@color/blue_darker</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/dark_blue_grey_three</item>
+        <!-- Customize your theme here. -->
+    </style>
 </resources>
