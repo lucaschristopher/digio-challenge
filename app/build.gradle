@@ -21,14 +21,14 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "BASE_URL", '"https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/"' // HML environment
+            buildConfigField "String", "BASE_URL", '"https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/sandbox/"' // HML environment
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
-            buildConfigField "String", "BASE_URL", '"https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/"' // PRD environment
+            buildConfigField "String", "BASE_URL", '"https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/sandbox/"' // PRD environment
         }
     }
     compileOptions {
@@ -87,6 +87,8 @@ dependencies {
     testImplementation "io.insert-koin:koin-test-junit4"
     testImplementation "io.insert-koin:koin-android-test"
 
+    testImplementation "io.mockk:mockk:$mockk_version"
+    testImplementation "app.cash.turbine:turbine:$turbine_version"
     testImplementation "junit:junit:$junit_version"
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"

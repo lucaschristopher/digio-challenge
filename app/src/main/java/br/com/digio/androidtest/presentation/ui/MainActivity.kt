@@ -17,14 +17,14 @@ import br.com.digio.androidtest.presentation.ui.spotlight.SpotlightAdapter
 import br.com.digio.androidtest.presentation.utils.Result
 import br.com.digio.androidtest.presentation.utils.hide
 import br.com.digio.androidtest.presentation.utils.show
-import br.com.digio.androidtest.presentation.viewmodel.MainViewModel
+import br.com.digio.androidtest.presentation.viewmodel.DigioViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 internal class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private val viewModel by viewModel<MainViewModel>()
+    private val viewModel by viewModel<DigioViewModel>()
 
     private val productAdapter: ProductAdapter by lazy { ProductAdapter() }
     private val spotlightAdapter: SpotlightAdapter by lazy { SpotlightAdapter() }

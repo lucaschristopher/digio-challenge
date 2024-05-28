@@ -1,15 +1,12 @@
-package br.com.digio.androidtest
+package br.com.digio.androidtest.data.service
 
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.RecordedRequest
 
-object MockServerUtil { // TODO: Remove?
+object MockApiUtil {
 
-    const val PORT = 8080
-
-    val successResponse by lazy {
-        val body = """
+    val successResponse = """
             {
               "spotlight": [
                 {
@@ -33,39 +30,42 @@ object MockServerUtil { // TODO: Remove?
             }
         """.trimIndent()
 
-        MockResponse()
-            .setResponseCode(200)
-            .setBody(body)
-    }
-
-    val errorResponse by lazy {
-        val body = """
+    private val errorResponse = """
             {
                 "code": "SPN-344",
                 "message": "Can't access this operation"
             }
         """.trimIndent()
-        MockResponse()
-            .setResponseCode(400)
-            .setBody(body)
-    }
 
-    val errorNotFoundResponse by lazy {
-        val body = """
+    private val errorNotFoundResponse = """
             {
                 "message": "Operation not found"
             }
         """.trimIndent()
+
+    val mockSuccess by lazy {
+        MockResponse()
+            .setResponseCode(200)
+            .setBody(successResponse)
+    }
+
+    val mockError by lazy {
+        MockResponse()
+            .setResponseCode(400)
+            .setBody(errorResponse)
+    }
+
+    val mockNotFound by lazy {
         MockResponse()
             .setResponseCode(404)
-            .setBody(body)
+            .setBody(errorNotFoundResponse)
     }
 
     val dispatcherSuccess = object : Dispatcher() {
         override fun dispatch(request: RecordedRequest): MockResponse {
             return when (request.path) {
-                "/users" -> successResponse
-                else -> errorNotFoundResponse
+                "/products" -> mockSuccess
+                else -> mockNotFound
             }
         }
     }
@@ -73,8 +73,8 @@ object MockServerUtil { // TODO: Remove?
     val dispatcherError = object : Dispatcher() {
         override fun dispatch(request: RecordedRequest): MockResponse {
             return when (request.path) {
-                "/users" -> errorResponse
-                else -> errorNotFoundResponse
+                "/products" -> mockError
+                else -> mockNotFound
             }
         }
     }

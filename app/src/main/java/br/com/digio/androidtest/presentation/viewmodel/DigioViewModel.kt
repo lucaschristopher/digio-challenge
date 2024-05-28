@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
-internal class MainViewModel(
+internal class DigioViewModel(
     private val useCase: GetDigioProductsUseCase
 ) : ViewModel() {
 
