@@ -55,7 +55,7 @@ class DigioServiceTest {
         service.getProducts()
 
         val request = mockWebServer.takeRequest()
-        assertEquals(request.path, "/products")
+        assertEquals(request.path, "/sandbox/products")
     }
 
     @Test
@@ -66,7 +66,7 @@ class DigioServiceTest {
         val result = service.getProducts()
         val request = mockWebServer.takeRequest()
 
-        assertEquals(request.path, "/products")
+        assertEquals(request.path, "/sandbox/products")
         assertNotNull(result)
     }
 
@@ -93,7 +93,7 @@ class DigioServiceTest {
         val result = service.getProducts()
         val request = mockWebServer.takeRequest()
 
-        assertEquals(request.path, "/products")
+        assertEquals(request.path, "/sandbox/products")
         assertNotNull(result)
         assertEquals(result.products?.size, mockResponse.products?.size)
     }

@@ -64,7 +64,7 @@ object MockApiUtil {
     val dispatcherSuccess = object : Dispatcher() {
         override fun dispatch(request: RecordedRequest): MockResponse {
             return when (request.path) {
-                "/products" -> mockSuccess
+                "/sandbox/products" -> mockSuccess
                 else -> mockNotFound
             }
         }
@@ -73,7 +73,7 @@ object MockApiUtil {
     val dispatcherError = object : Dispatcher() {
         override fun dispatch(request: RecordedRequest): MockResponse {
             return when (request.path) {
-                "/products" -> mockError
+                "/sandbox/products" -> mockError
                 else -> mockNotFound
             }
         }
