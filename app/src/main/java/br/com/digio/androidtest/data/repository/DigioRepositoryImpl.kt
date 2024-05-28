@@ -1,6 +1,6 @@
 package br.com.digio.androidtest.data.repository
 
-import br.com.digio.androidtest.data.datasource.DigioRemoteDataSource
+import br.com.digio.androidtest.data.datasource.remote.DigioRemoteDataSource
 import br.com.digio.androidtest.data.mapper.toDomain
 import br.com.digio.androidtest.domain.model.DigioProducts
 import br.com.digio.androidtest.domain.repository.DigioRepository
