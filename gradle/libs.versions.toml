@@ -13,6 +13,7 @@ retrofit = "2.9.0"
 okhttp = "4.12.0"
 mockWebServer = "4.9.3"
 coil = "2.5.0"
+room = "2.6.1"
 mockk = "1.13.11"
 navigation = "2.7.7"
 coreTesting = "1.1.1"
@@ -53,6 +54,9 @@ coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 core-testing = { module = "android.arch.core:core-testing", version.ref = "coreTesting" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+room = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -91,6 +91,10 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 
+    implementation(libs.room)
+    annotationProcessor(libs.room.compiler)
+    kapt(libs.room.compiler)
+
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
