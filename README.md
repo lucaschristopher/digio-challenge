@@ -30,6 +30,7 @@ Boa sorte! =)
 ## A Solução e considerações sobre o projeto
 
 A aplicação se trata de uma listagem de produtos simples, onde temos as informações de um carrossel de banners (spotlights), um banner principal sobre o Digio Cache e uma listagem de produtos ofertados.
+
 - **OBS:** A branch **master** contém uma abordagem utilizando visualização com XML e se diferencia com a DI Koin. Já a branch **dev** utiliza a estrura
   de visualização com **Jetpack Compose e DI Hilt**.
 - Alguns dados estavam indisponíveis, estão foi adotado *placeholders* com a logo do Digio para imagens não disponíveis.
