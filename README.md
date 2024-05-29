@@ -29,9 +29,10 @@ Boa sorte! =)
 
 ## A Solução e considerações sobre o projeto
 
-A aplicação se trata de uma listagem de repositórios, além de possuir uma tela de detalhes que exibe os PR's (pull requests) abertos para o repositório em questão.
-- A ordem de exibição da listagem está considerando o filtro *"stars"*, o que leva a priorizar os repositórios mais seguidos e avaliados.
-- Muitos dados estavam indisponíveis, estão foi adotado *placeholders* para imagens e campos que a API trouxe como nulos.
+A aplicação se trata de uma listagem de produtos simples, onde temos as informações de um carrossel de banners (spotlights), um banner principal sobre o Digio Cache e uma listagem de produtos ofertados.
+- **OBS:** A branch **master** contém uma abordagem utilizando visualização com XML e se diferencia com a DI Koin. Já a branch **dev** utiliza a estrura
+de visualização com **Jetpack Compose e DI Hilt**.
+- Alguns dados estavam indisponíveis, estão foi adotado *placeholders* com a logo do Digio para imagens não disponíveis.
 
 Foi adotada a **[Arquitetura MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)** de acordo com as [recomendações de arquitetura mobile da Google](https://developer.android.com/jetpack/guide) juntamente com a **[Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)**. Além disso, foi adotado no projeto as principais bibliotecas do mundo do [Android Jetpack](https://developer.android.com/jetpack) e utilização de demais ferramentas. Seguem abaixo cada uma com a devida justificativa de adoção:
 
