@@ -19,6 +19,7 @@ val dp20 = 20.dp
 val dp24 = 24.dp
 val dp30 = 30.dp
 val dp32 = 32.dp
+val dp35 = 35.dp
 val dp40 = 40.dp
 val dp42 = 42.dp
 val dp48 = 48.dp
@@ -28,9 +29,12 @@ val dp60 = 60.dp
 val dp80 = 80.dp
 val dp90 = 90.dp
 val dp100 = 100.dp
+val dp120 = 120.dp
 val dp150 = 150.dp
-val dp179 = 179.dp
+val dp180 = 180.dp
 val dp200 = 200.dp
+val dp300 = 300.dp
+val dp400 = 400.dp
 
 // FontSize
 val sp0 = 0.sp

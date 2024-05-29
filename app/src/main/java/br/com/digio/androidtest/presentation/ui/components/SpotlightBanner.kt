@@ -1,38 +1,62 @@
 package br.com.digio.androidtest.presentation.ui.components
 
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.digio.androidtest.R
 import br.com.digio.androidtest.domain.model.Spotlight
 import br.com.digio.androidtest.presentation.ui.theme.AndroidTestTheme
+import br.com.digio.androidtest.presentation.ui.theme.dp20
+import br.com.digio.androidtest.presentation.ui.theme.dp24
 import br.com.digio.androidtest.presentation.ui.theme.dp4
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
+import br.com.digio.androidtest.presentation.ui.theme.dp400
+import coil.compose.AsyncImagePainter
+import coil.compose.SubcomposeAsyncImage
+import coil.compose.SubcomposeAsyncImageContent
 
 @Composable
 internal fun SpotlightBanner(
     modifier: Modifier = Modifier,
     spotlight: Spotlight
 ) {
-    ElevatedCard(
-        modifier = modifier.fillMaxSize(),
+    Card(
+        modifier = modifier
+            .wrapContentSize()
+            .padding(start = dp4, end = dp4, top = dp24),
+        shape = RoundedCornerShape(dp20),
         elevation = CardDefaults.cardElevation(defaultElevation = dp4)
     ) {
-        AsyncImage(
-            model = ImageRequest.Builder(LocalContext.current)
-                .data(spotlight.bannerURL)
-                .crossfade(true)
-                .build(),
-            placeholder = painterResource(R.drawable.ic_alert_circle),
-            contentDescription = stringResource(R.string.image_description_spotlight_item),
-        )
+        SubcomposeAsyncImage(
+            contentScale = ContentScale.Crop,
+            modifier = modifier
+                .width(dp400)
+                .wrapContentHeight(),
+            model = spotlight.bannerURL,
+            contentDescription = stringResource(R.string.image_description_spotlight_item)
+        ) {
+            when (painter.state) {
+                is AsyncImagePainter.State.Loading -> {
+                    DigioLoadingComponent()
+                }
+
+                is AsyncImagePainter.State.Error -> {
+                    DigioLogo()
+                }
+
+                else -> {
+                    SubcomposeAsyncImageContent()
+                }
+            }
+        }
     }
 }
 

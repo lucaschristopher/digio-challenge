@@ -4,10 +4,12 @@
     <string name="txt_main_text_products">Produtos</string>
     <string name="error">Ocorreu um erro. Tente novamente.</string>
     <string name="logo">Logo</string>
-    <string name="digio_cash">digio Cash</string>
+    <string name="digio">digio</string>
+    <string name="cache">Cache</string>
     <string name="digio_cash_banner">Digio Cash banner</string>
     <string name="digio_cache">digio Cache</string>
     <string name="error_info">Ops! Ocorreu um erro ao buscar produtos.</string>
+    <string name="image_description_digio_logo">Digio Logo</string>
     <string name="image_description_contact_profile_picture">Contact profile picture</string>
     <string name="image_description_product_item">Product item</string>
     <string name="image_description_spotlight_item">Spotlight item</string>

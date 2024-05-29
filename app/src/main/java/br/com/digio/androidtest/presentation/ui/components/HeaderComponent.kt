@@ -11,13 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.digio.androidtest.R
 import br.com.digio.androidtest.presentation.ui.theme.AndroidTestTheme
-import br.com.digio.androidtest.presentation.ui.theme.dp10
+import br.com.digio.androidtest.presentation.ui.theme.af05
 import br.com.digio.androidtest.presentation.ui.theme.dp40
 import br.com.digio.androidtest.presentation.ui.theme.dp8
 
@@ -27,9 +28,7 @@ internal fun HeaderComponent(
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(dp10)
+        modifier = modifier.fillMaxWidth()
     ) {
         Image(
             painter = painterResource(R.drawable.ic_launcher_icon_round),
@@ -41,7 +40,8 @@ internal fun HeaderComponent(
         Text(
             modifier = modifier.padding(start = dp8),
             text = stringResource(id = R.string.hello_maria),
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            color = Color.Black.copy(alpha = af05)
         )
     }
 }

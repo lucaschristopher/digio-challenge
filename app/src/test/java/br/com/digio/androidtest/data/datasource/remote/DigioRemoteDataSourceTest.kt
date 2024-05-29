@@ -1,7 +1,5 @@
-package br.com.digio.androidtest.data.datasource
+package br.com.digio.androidtest.data.datasource.remote
 
-import br.com.digio.androidtest.data.datasource.remote.DigioRemoteDataSource
-import br.com.digio.androidtest.data.datasource.remote.DigioRemoteDataSourceImpl
 import br.com.digio.androidtest.data.model.DigioProductsResponse
 import br.com.digio.androidtest.data.service.DigioService
 import br.com.digio.androidtest.data.service.MockApiUtil

@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
-// TODO: Verify use
 internal class NetworkConnectivityObserver(
     context: Context
 ) : ConnectivityObserver {

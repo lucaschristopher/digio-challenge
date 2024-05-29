@@ -1,8 +1,7 @@
 package br.com.digio.androidtest.presentation.ui.screen.home
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -16,7 +15,7 @@ internal fun DigioHomeScreen(
 ) {
     val state = viewModel.products.collectAsStateWithLifecycle().value
 
-    Scaffold(modifier = modifier.fillMaxSize()) {
-        DigioHomeContent(modifier = modifier.padding(it), state = state)
+    Surface(modifier = modifier.fillMaxSize()) {
+        DigioHomeContent(modifier = modifier, state = state)
     }
 }

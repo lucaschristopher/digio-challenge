@@ -17,10 +17,10 @@ internal fun DigioHomeContent(
     when (state) {
         is Result.Loading -> DigioLoadingComponent(modifier)
         is Result.Failure -> {
-
+            // TODO: Error scenario
         }
 
-        is Result.Success -> HomeWidget(modifier, state.data)
+        is Result.Success -> HomeWidget(modifier = modifier, data = state.data)
 
         else -> Unit
     }

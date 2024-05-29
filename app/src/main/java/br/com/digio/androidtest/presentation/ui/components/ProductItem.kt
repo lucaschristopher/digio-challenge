@@ -1,17 +1,26 @@
 package br.com.digio.androidtest.presentation.ui.components
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.digio.androidtest.R
 import br.com.digio.androidtest.domain.model.Product
 import br.com.digio.androidtest.presentation.ui.theme.AndroidTestTheme
+import br.com.digio.androidtest.presentation.ui.theme.dp150
+import br.com.digio.androidtest.presentation.ui.theme.dp20
+import br.com.digio.androidtest.presentation.ui.theme.dp4
 import br.com.digio.androidtest.presentation.ui.theme.dp6
 import coil.compose.AsyncImagePainter
 import coil.compose.SubcomposeAsyncImage
@@ -22,21 +31,37 @@ internal fun ProductItem(
     modifier: Modifier = Modifier,
     product: Product
 ) {
-    ElevatedCard(
-        modifier = modifier.fillMaxSize(),
+    Card(
+        modifier = modifier
+            .size(dp150)
+            .padding(horizontal = dp4),
+        shape = RoundedCornerShape(dp20),
         elevation = CardDefaults.cardElevation(defaultElevation = dp6)
     ) {
-        SubcomposeAsyncImage(
-            modifier = modifier.fillMaxSize(),
-            model = product.imageURL,
-            alignment = Alignment.TopStart,
-            contentDescription = stringResource(R.string.image_description_product_item)
+        Box(
+            modifier = modifier
+                .fillMaxSize()
+                .background(color = Color.White),
+            contentAlignment = Alignment.Center,
         ) {
-            val state = painter.state
-            if (state is AsyncImagePainter.State.Loading || state is AsyncImagePainter.State.Error) {
-                CircularProgressIndicator()
-            } else {
-                SubcomposeAsyncImageContent()
+            SubcomposeAsyncImage(
+                contentScale = ContentScale.Fit,
+                model = product.imageURL,
+                contentDescription = stringResource(R.string.image_description_product_item)
+            ) {
+                when (painter.state) {
+                    is AsyncImagePainter.State.Loading -> {
+                        DigioLoadingComponent()
+                    }
+
+                    is AsyncImagePainter.State.Error -> {
+                        DigioLogo()
+                    }
+
+                    else -> {
+                        SubcomposeAsyncImageContent()
+                    }
+                }
             }
         }
     }
